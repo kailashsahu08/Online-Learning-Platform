@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Signup</title>
+</head>
+<body>
+<section class="heroElement">
+    <div class="form-popup">
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <th:block th:if="${session.msg}">
+                    <p class="text-center text-success fs-5 success-msg">[[${session.msg}]]</p>
+                    <th:block th:text="${@UserServiceImpl.removeSessionMessage()}"></th:block>
+                </th:block>
+                <form action="register" method="post">
+                    <div class="input-field">
+                        <input type="text" name="name" required>
+                        <label>Enter your Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required>
+                        <label>Enter Your Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" required>
+                        <label>Create password</label>
+                    </div>
+                    <select class="input-field" name="role" required>
+                        <option value="LEARNER" disabled selected>SELECT ROLES</option>
+                        <option value="CREATOR" >CREATOR</option>
+                        <option value="LEARNER">LEARNER</option>
+                    </select>
+
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy" name="term" required>
+                        <label for="policy">
+                            I agree the
+                            <a href="#" class="option">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account?
+                    <a href="/login" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

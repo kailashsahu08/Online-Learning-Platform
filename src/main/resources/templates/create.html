@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Create</title>
+</head>
+<body>
+<section class="heroElement">
+    <form action="createCourse" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="title" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Description </label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="description" >
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Upload Content </label>
+            <input type="file" class="form-control" id="exampleInputPassword3" name="video" >
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">photo</label>
+            <input type="file" class="form-control" id="exampleInputPassword2" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
+</body>
+</html>

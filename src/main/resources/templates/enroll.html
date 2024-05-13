@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Enroll</title>
+</head>
+<body>
+<section class="heroElement">
+    <div class="enrollContainer">
+        <div class="subEnroll">
+            <div class="title_desc_div">
+                <h3 class="enroll_title">[[${course.title}]]</h3>
+                <p class="enroll_desc">[[${course.description}]]</p>
+            </div>
+            <div class="enroll_card">
+                <div class="enroll_card_image">
+                    <img th:src="${course.imageUrl}" alt="Image Not Found">
+                </div>
+                <div class="enroll_card_button">
+                    <button type="button"><a th:href="@{'enrollCourse/'+${course.id}}">Enroll Now</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

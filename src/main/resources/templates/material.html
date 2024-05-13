@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Study Material</title>
+</head>
+<body>
+<section class="heroElement">
+    <div class="material">
+        <div class="video_material">
+            <video th:src="${course.videoUrl}" controls> </video>
+        </div>
+        <div class="title_material">
+            <h3>[[${course.title}]]</h3>
+            <p>[[${course.description}]]</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

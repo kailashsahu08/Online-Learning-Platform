@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{ base :: layout(~{::title} , ~{::section} ) }" >
+<head>
+    <meta charset="ISO-8859-1">
+    <title>MyCourse Page</title>
+</head>
+<body>
+<section class="heroElement">
+    <div class="all_card p-5">
+        <div th:each="n:${myCourse}" class="card_component">
+            <a th:href="@{'viewCourse/'+${n.id}}">
+                <img th:src="${n.imageUrl}" class="card_img"  alt="Hollywood Sign on The Hill" />
+                <div class="card-body">
+                    <h5 class="card-title">[[${n.title}]]</h5>
+                    <p class="card-text">
+                        [[${n.description}]]
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>500
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>
