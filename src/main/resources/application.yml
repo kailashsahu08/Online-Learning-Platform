@@ -2,13 +2,19 @@ spring:
   application:
     name: EHub
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ehub
-    username: root
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql:postgres
+    username: postgres
     password: admin
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
 server:
   port: 9595
+  tomcat:
+    max-http-form-post-size: 100000000

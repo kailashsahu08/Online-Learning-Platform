@@ -73,7 +73,7 @@ public class HomeController {
                 e.printStackTrace();
             }
         }
-        return "course";
+        return "redirect:/learner/course";
     }
     @GetMapping("/blog")
     public String blogPage(Principal p){
@@ -91,7 +91,7 @@ public class HomeController {
                 e.printStackTrace();
             }
         }
-        return "blog";
+        return "redirect:/learner/blog";
     }
     @GetMapping("/about")
     public String aboutPage(Principal p){
@@ -109,6 +109,6 @@ public class HomeController {
                 e.printStackTrace();
             }
         }
-        return "about";
+        return "redirect:/learner/about";
     }
 }

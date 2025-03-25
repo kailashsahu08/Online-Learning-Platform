@@ -6,25 +6,27 @@
 </head>
 <body>
 <section class="heroElement">
-    <form action="createCourse" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Title</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="title" aria-describedby="emailHelp" required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Description </label>
-            <input type="text" class="form-control" id="exampleInputPassword1" name="description" >
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Upload Content </label>
-            <input type="file" class="form-control" id="exampleInputPassword3" name="video" >
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">photo</label>
-            <input type="file" class="form-control" id="exampleInputPassword2" name="image" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="container">
+        <form action="createCourse" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="title" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Description </label>
+                <textarea rows="6" type="text" class="form-control" id="exampleInputPassword1" name="description" ></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Upload Content </label>
+                <input type="file" class="form-control" id="exampleInputPassword3" name="video" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">photo</label>
+                <input type="file" class="form-control" id="exampleInputPassword2" name="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </section>
 </body>
 </html>

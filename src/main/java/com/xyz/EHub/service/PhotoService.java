@@ -19,8 +19,8 @@ public class PhotoService {
 
         // Convert UUID to string and remove hyphens
         String uniqueId = uuid.toString().replace("-", "");
-        Map data =this.cloudinary.uploader().upload(file.getBytes(),Map.of("resource_type", "video",
-                "public_id", uniqueId));
+        Map data =this.cloudinary.uploader().uploadLarge(file.getBytes(),Map.of("resource_type", "video",
+                "public_id", uniqueId,"chunk_size", 6000000));
         return (String) data.get("url");
     }
     public String uploadPhoto(MultipartFile file) throws IOException {
